@@ -5,13 +5,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TestResolver } from './test-resolver.service';
 import { TestService } from './test.service';
+import {CommonModule} from "./common.module";
 
 @Module({
   imports: [
+    CommonModule,
     I18nModule.forRoot({
       parser: I18nJsonParser,
       parserOptions: {
-        path: path.join(__dirname, '/i18n'),
+        path: path.join(__dirname, 'i18n'),
       },
       fallbackLanguage: "en",
       resolvers: [
@@ -23,9 +25,6 @@ import { TestService } from './test.service';
   controllers: [
     AppController
   ],
-  providers: [
-    AppService,
-    TestService,
-  ],
+  providers: [],
 })
 export class AppModule {}

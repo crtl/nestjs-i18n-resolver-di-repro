@@ -9,6 +9,9 @@ export class TestResolver implements I18nResolver {
     constructor(protected testService: TestService) {}
 
     resolve(context: ExecutionContext): string | string[] | Promise<string | string[]> {
+
+        console.log("TestResolver", this.testService);
+
         return "en";
     }
 
